@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support · WarMOB</title>
+<meta name="description" content="Help with the WarMOB app: getting started, sign-in, common errors and removing your data.">
+<link rel="canonical" href="https://warmob-app.github.io/support/">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<header><img class="mark" src="../icon-512.png" srcset="../apple-touch-icon.png 180w, ../icon-512.png 512w" sizes="40px" alt="WarMOB" width="40" height="40"><h1>Support</h1></header>
+
+<p class="lede">Help with WarMOB, the independent iPhone and iPad app for Warcon panels. Can't find your answer here? Write to <a href="mailto:skidgaming101@gmail.com">skidgaming101@gmail.com</a>.</p>
+
+<h2>Getting started</h2>
+<div class="card">
+<ol>
+<li>Install WarMOB on an iPhone or iPad with iOS 18 or later.</li>
+<li>On <strong>Add your Warcon panel</strong>, enter the address you open in your browser to reach your panel, for example <code>https://panel.example.com</code>, and tap <strong>Check address</strong>.</li>
+<li>When the app says <strong>Warcon panel found</strong>, tap <strong>Continue to sign in</strong> and sign in with your panel account.</li>
+<li>Your servers appear live. You can add more panels later from the Panels tab (<strong>Add a panel</strong>).</li>
+</ol>
+</div>
+
+<h2>What you need</h2>
+<div class="card">
+<ul>
+<li>A Warcon panel served over <strong>HTTPS with a certificate your device trusts</strong> (for example Let's Encrypt or Cloudflare). Plain <code>http://</code> addresses and self-signed certificates aren't supported.</li>
+<li>The panel reachable from your device: on the internet, or through your VPN.</li>
+<li>No extra login page in front of the panel (such as Cloudflare Access or Authelia).</li>
+<li>An account on that panel. WarMOB has no accounts or servers of its own: what you can see and do is what your panel's role for you allows.</li>
+</ul>
+</div>
+
+<h2>Signing in</h2>
+<div class="card">
+<ul>
+<li><strong>Username and password</strong>: the same as on your panel's web page. If your account has two-factor sign-in, the app asks for the code from your authenticator app next (or one of your backup codes). "Trust this device for 30 days" skips the code next time.</li>
+<li><strong>Discord or Steam</strong>: tap <strong>Sign in through the web page</strong> under the password form. Your panel's own sign-in page opens inside the app, as on the web, and offers Discord or Steam if your panel has them. You may have to sign in to Discord or Steam again: the page keeps nothing between attempts.</li>
+<li><strong>Passkeys and security keys can't be used inside the app.</strong> Apple lets an app's web page use them only for websites tied to that app. Sign in to Discord or Steam with your password, and when you're asked to verify, choose another way (on Discord: <strong>Verify with something else</strong>, then an authenticator or backup code). If a passkey is the only way your account can verify, add another way on the provider's side, or set a password on your panel's Account page and sign in with it.</li>
+<li><strong>Signed up with Discord, Steam or a passkey?</strong> Your panel account has no password until you set one on the panel's Account page. Until then, use <strong>Sign in through the web page</strong>.</li>
+</ul>
+</div>
+
+<h2>Common problems</h2>
+<div class="card">
+<ul>
+<li><strong>"Warcon must be served over HTTPS."</strong> The address starts with <code>http://</code>. WarMOB only connects over HTTPS. Put your panel behind HTTPS with a trusted certificate (a reverse proxy with Let's Encrypt, or Cloudflare), set the panel's <code>ORIGIN</code> to the https address, and enter that.</li>
+<li><strong>"Can't reach the panel" mentioning a certificate</strong> (for example "The certificate for this server is invalid"). Your device doesn't trust the panel's certificate: it is self-signed, expired, or for another name. Use a certificate from a public authority for exactly the address you enter.</li>
+<li><strong>"Not a Warcon panel" and "a sign-in page in front of the panel?"</strong> The address leads to a login page (Cloudflare Access, Authelia, a hosting provider's page) instead of Warcon. WarMOB has to reach Warcon directly: allow the panel's address through without that page, or reach it over your VPN.</li>
+<li><strong>"Can't reach the panel"</strong> (no answer). Check the address, that the panel is running, and that your device can reach it: on mobile data a panel on your home network needs a VPN. Open the same address in Safari on the device to compare.</li>
+<li><strong>"You're offline"</strong>. Your device has no connection. The app shows what it last knew and is live again within seconds of the connection's return.</li>
+<li><strong>"This address is not the one the panel is configured for"</strong>. Enter exactly the address you open in your browser (the panel's <code>ORIGIN</code>), with the same host name.</li>
+</ul>
+</div>
+
+<h2>Removing your data</h2>
+<div class="card">
+<p>WarMOB keeps your panels, settings and sign-in on your device only (<a href="../privacy/">privacy policy</a>). To remove everything:</p>
+<ol>
+<li><strong>Sign out</strong> (Settings → Sign out) on each panel. This ends the session on your panel.</li>
+<li><strong>Forget this device</strong> (Settings) also deletes your panel's "trusted device" cookie, so the next password sign-in asks for your two-factor code again.</li>
+<li><strong>Remove each panel</strong> (Panels tab → the panel's menu → <strong>Remove…</strong>). This deletes its sign-in, recent broadcasts and cached features.</li>
+<li>Then <strong>delete the app</strong>. Deleting the app alone doesn't sign you out: iOS keeps the app's sign-in after the app is deleted, until it is installed and opened again. You can also end a session from your panel's Account page.</li>
+</ol>
+</div>
+
+<h2>Contact</h2>
+<p>Questions, problems and feedback: <a href="mailto:skidgaming101@gmail.com">skidgaming101@gmail.com</a>. Tell us your iOS version and the app's version (Settings → About and licences) and what the app showed. Questions about your panel itself, your account or your servers go to your panel's owner.</p>
+
+<footer>
+<p><a href="../">WarMOB</a> · <a href="../privacy/">Privacy policy</a></p>
+<p class="muted">WarMOB is an independent app and is not affiliated with the Warcon project or the makers of WARDOGS.</p>
+</footer>
+</main>
+</body>
+</html>
