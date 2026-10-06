@@ -17,7 +17,7 @@ body {
 }
 main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
 header { margin-bottom: 32px; }
-.mark { display: inline-block; width: 40px; height: 40px; border: 4px solid var(--brass); border-radius: 50%; vertical-align: middle; margin-right: 12px; }
+.mark { display: inline-block; width: 40px; height: 40px; border-radius: 22.37%; box-shadow: 0 0 0 1px var(--line); vertical-align: middle; margin-right: 12px; }
 h1 { display: inline; font-size: 32px; letter-spacing: -0.01em; vertical-align: middle; }
 h2 { font-size: 20px; margin: 36px 0 8px; color: var(--brass); }
 p, li { color: var(--mist); }
